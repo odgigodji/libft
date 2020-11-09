@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                         :::       :::::::: */
-/*   ft_bzero.c                                           :+:       :+: :+:   */
+/*                                                        :::      ::::::::   */
+/*   bzero.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: namerei <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 20:46:13 by namerei           #+#    #+#             */
-/*   Updated: 2020/11/03 14:36:42 by namerei          ###   ########.fr       */
+/*   Updated: 2020/10/30 17:39:39 by namerei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,14 @@
 
 void	ft_bzero(void *s, size_t n)
 {
+	unsigned char *x;
+	
+	x = (unsigned char*)s;
 	while (n--)
-		*(unsigned char *)s++ = '\0';
+		*x++ = '\0';
 }
 
-/*int		main(void)
+int		main(void)
 {
 	int i = 5;
 	char a[20] = "h99loooo";
@@ -29,4 +32,4 @@ void	ft_bzero(void *s, size_t n)
 	printf("%c%c%c%c%c%c", a[0], a[1], a[2], a[3], a[4], a[5]);
 	return (0);
 
-}*/
+}

@@ -26,18 +26,3 @@ int 	ft_atoi(const char *str)
 	}
 	return ((int)sign * n);
 }
-int	main()
-{
-	int i = 0;
-	char c;
-	char z[20];
-	char x[20] = "\n\t\v\r\f +9";
-	/*while ((c = getchar()) != EOF)
-	{
-		z[i] = c;
-		i++;
-	}*/	
-	printf("my:  %d\n",	ft_atoi(x));	
-	printf("orig:%d\n",	atoi(x));	
-
-}

@@ -6,7 +6,7 @@
 /*   By: namerei <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 15:46:54 by namerei           #+#    #+#             */
-/*   Updated: 2020/11/04 00:28:51 by namerei          ###   ########.fr       */
+/*   Updated: 2020/11/07 14:58:19 by namerei          ###   ########.fr       */
 /*                                                             k              */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strlen(const char *s)
 	while (s[len])
 		len++;
 	return ((size_t) len);
-}	
+}
 
 /*int		main()
 {

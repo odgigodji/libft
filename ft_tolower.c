@@ -12,7 +12,7 @@
 
 #include <stdio.h>
 
-int	tolower(int c)
+int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 		return ((unsigned char)c + 'a' - 'A');
@@ -26,7 +26,7 @@ int main()
 	char z[20] = "hELLo WoRld";
 	while (z[i])
 	{
-		printf("%c",tolower(z[i]));
+		printf("%c",ft_tolower(z[i]));
 		i++;
 	}
 	return (0);
