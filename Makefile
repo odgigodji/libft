@@ -1,49 +1,29 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: namerei <marvin@42.fr>                     +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2020/11/08 14:06:14 by namerei           #+#    #+#              #
-#    Updated: 2020/11/08 14:06:18 by namerei          ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+SRCS	= ft_*.c
 
+OBJS	= ${SRCS:.c=.o}
 
-NAME = libft.a
+NAME	= libft.a
 
-CC = gcc
+CC		= gcc
+ARRC	= ar rc
+RM		= rm -f
 
-FLAGS = -Wall -Werror -Wextra -c -I ./
+CFLAGS	= -Wall -Wextra -Werror -c
 
-SOURCE = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c ft_memchr.c ft_memcmp.c ft_strlen.c ft_strlcpy.c ft_strlcat.c ft_strchr.c 
+all:		${NAME}
 
-SOURCE_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
-ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
-OBJECTS = $(SOURCE:.c=.o)
-OBJECTS_BONUS = $(SOURCE_BONUS:.c=.o)
-all: $(NAME) 
+${NAME}:	${OBJS}
+			${ARRC} ${NAME} ${OBJS}
 
-%.o: %.c
-		$(CC) $(FLAGS) $<
-
-$(NAME):
-		$(CC) $(FLAGS) $(SOURCE)
-		ar rc $(NAME) $(OBJECTS)
-		ranlib $(NAME)
-
+.c.o: ${SRCS} 
+			${CC} ${CFLAGS} ${SRCS}
+			
 clean:
-		rm -f $(OBJECTS) $(OBJECTS_BONUS)
+			${RM} ${OBJS}
 
-fclean: clean
-		 rm -f $(NAME)
+fclean:		clean
+			${RM} ${NAME}
 
-re:fclean all
+re:			fclean all
 
-bonus: $(NAME)
-		$(CC) $(FLAGS) $(SOURCE_BONUS) $(SOURCE) 
-		ar rc $(NAME) $(OBJECTS) $(OBJECTS_BONUS)
-		ranlib $(NAME)
-
-.PHONY: clean fclean all re bonus
+.PHONY:		all clean fclean re libft.a

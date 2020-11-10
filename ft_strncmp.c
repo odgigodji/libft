@@ -10,13 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+// #include <stdio.h>
+// #include <string.h>
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	int i;
-
+	if (n ==0)
+		return (0);
 	i = 0;
 	while (*s1 == *s2 && --n && *s1 && *s2)
 	{
@@ -26,9 +28,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	//return ((*(unsigned char *)s1 < *(unsigned char *)s2) ? -1 : +1);
 	return ((*(unsigned char *)s1 - *(unsigned char *)s2));
 }
-
-/*int	main(void)
-{
-	printf("my%d\n", ft_strncmp("gall","gall",8));
-	printf("orig%d\n", strncmp("gall","gall",8));
-}*/
+// int	main(void)
+// {
+// 	printf("my%d\n", ft_strncmp("gall","gall",8));
+// 	printf("orig%d\n", strncmp("gall","gall",8));
+// }

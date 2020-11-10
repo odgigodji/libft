@@ -10,8 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+// #include <string.h>
+// #include <stdio.h>
+#include "libft.h"
 
 size_t ft_strnlen(const char *s, size_t maxlen)
 {
@@ -27,9 +28,9 @@ size_t ft_strnlen(const char *s, size_t maxlen)
 	return (len);
 }
 
-/*int	main(void)
-{
-	char z[] = "01234567890";
-	printf("my:%zu\n", ft_strnlen(z,9));
-	printf("orig %zu\n", strnlen(z,9));
-}*/
+// int	main(void)
+// {
+// 	char z[] = "01234567890";
+// 	printf("my:%zu\n", ft_strnlen(z,9));
+// 	printf("orig %zu\n", strnlen(z,9));
+// }

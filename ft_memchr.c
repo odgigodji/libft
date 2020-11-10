@@ -10,8 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+// #include <stdio.h>
+// #include <string.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
@@ -27,33 +28,12 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	return (NULL);
 }
 
-int		main(void)
-{
-	// Исходный массив
-   //unsigned char src[15]="1234567890";
-   // Переменная, в которую будет сохранен указатель
-   // на искомый символ.
-   char *sym;
-
-   // Вывод исходного массива
-   //printf ("src old: %s\n",src);
-
-   // Поиск требуемого символа
-   //sym = ft_memchr (src, '4', 10);
-   //memchr("gelloo", 90, 3);
-
-   // Если требуемый символ найден, то заменяем его
-   // на символ '!'
-   if (sym != NULL)
-      sym[0]= '!';
-
-   // Вывод исходного массива
-   //printf ("src new: %s\n",src);
-   	int n = 6;
-	char a[] = "abcdefgh";
-	char b[] = "abcdefgh";
-	printf("my:\n\t%s\n", ft_memchr(a, 'd', n));
-	printf("orig:\n\t%s\n", memchr(b, 'd', n));
+// int		main(void)
+// {
+// 	char a[] = "abcdefgh";
+// 	char b[] = "abcdefgh";
+// 	printf("my:\n\t%s\n", ft_memchr(a, 'd', n));
+// 	printf("orig:\n\t%s\n", memchr(b, 'd', n));
 	
-   return 0;
-}
+//    return 0;
+// }

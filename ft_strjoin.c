@@ -1,42 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: namerei <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/04 00:07:46 by namerei           #+#    #+#             */
-/*   Updated: 2020/11/04 18:07:10 by namerei          ###   ########.fr       */
+/*   Created: 2020/11/10 19:09:20 by namerei           #+#    #+#             */
+/*   Updated: 2020/11/10 19:22:09 by namerei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
-// #include <stdlib.h>
-// #include "ft_strlen.c"
-#include "libft.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include "ft_strlen.c"
 
-char	*ft_strdup(const char *s1)
+char *ft_strjoin(char const *s1, char const *s2)
 {
-	char *res;
-	size_t i;
+	size_t len;
 
-	i = 0;
-	res = (char *)malloc(ft_strlen(s1) + 1);
-	if (!res)
-		return (NULL);
-	while (s1[i])
+	len = ft_strlen(s1) + ft_strlen(s2);
+	char *res = (char *)malloc(len + 1);
+	while (s1 )
 	{
-		res[i] = s1[i];
-		i++;
+		*res = *s1;
+		res++;
+		s1++;
 	}
-	res[i] = '\0';
+	*res = '\0';
 	return (res);
 }
 
-// int 	main(void)
-// {
-// 	char *z = ft_strdup("gelllllloo");
-// 	printf("%s", z);
-// 	//printf("\217");
-// 	return (0);
-// }
+int		main(void)
+{
+	char *z = "asdfasdf";
+	char *a = "ffffffff";
+	char *x = ft_strjoin(z, a);
+	printf("%s\n",x);
+}

@@ -1,42 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: namerei <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/04 00:07:46 by namerei           #+#    #+#             */
-/*   Updated: 2020/11/04 18:07:10 by namerei          ###   ########.fr       */
+/*   Created: 2020/11/10 18:30:08 by namerei           #+#    #+#             */
+/*   Updated: 2020/11/10 18:43:10 by namerei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include <stdio.h>
 // #include <stdlib.h>
-// #include "ft_strlen.c"
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+char *ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char *res;
 	size_t i;
 
-	i = 0;
-	res = (char *)malloc(ft_strlen(s1) + 1);
-	if (!res)
-		return (NULL);
-	while (s1[i])
+	i =0;
+	char *res = (char *)malloc(len + 1);
+	if (!res || !s)
+		return (0);
+	while (i<len && start < ft_strlen(s))
 	{
-		res[i] = s1[i];
-		i++;
+		res[i++] = s[start++];
+		// start++;
+		// i++;
 	}
 	res[i] = '\0';
 	return (res);
 }
 
-// int 	main(void)
+// int		main(void)
 // {
-// 	char *z = ft_strdup("gelllllloo");
-// 	printf("%s", z);
-// 	//printf("\217");
-// 	return (0);
+// 	char x[] = "01234567890123456789";
+// 	char *z = ft_substr(x,10,5);
+// 	printf("%s", z);	
 // }

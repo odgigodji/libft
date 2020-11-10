@@ -10,14 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+// #include <stdio.h>
+#include "libft.h"
 
 int	ft_isprint(int c)
 {
 	return ((c >= 32 && c <= 126) ? 1 : 0);
 }
 
-/*int main()
-{
-	printf("%d", ft_isprint('3'));
-}*/
+// int main()
+// {
+// 	printf("%d", ft_isprint('3'));
+// }

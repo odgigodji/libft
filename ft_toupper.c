@@ -6,11 +6,12 @@
 /*   By: namerei <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/08 14:10:56 by namerei           #+#    #+#             */
-/*   Updated: 2020/11/08 14:24:37 by namerei          ###   ########.fr       */
+/*   Updated: 2020/11/09 22:55:54 by namerei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 int	ft_toupper(int c)
 {
-	return ((c >= 97 && c <= 122) ? (unsigned char)c - 32 : (unsigned char)c);
+	return ((c >= 97 && c <= 122) ? c - 32 : c);
 }

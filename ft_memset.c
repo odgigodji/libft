@@ -10,8 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+// #include <stdio.h>
+// #include <string.h>
+#include "libft.h"
 
 void	*ft_memset(void *b, int c, size_t len)
 {
@@ -28,10 +29,10 @@ void	*ft_memset(void *b, int c, size_t len)
 	return ((unsigned char*)b);
 }
 
-int		main(void)
-{
-	char a[20] = "\0\0\0";
-	printf("orig %s\n", memset(a, 90, 5));
-	printf("my %s\n", ft_memset(a, 90, 5));
-	printf("sizeof char =%lu", sizeof(int *));
-}
+// int		main(void)
+// {
+// 	char a[20] = "\0\0\0";
+// 	printf("orig %s\n", memset(a, 90, 5));
+// 	printf("my %s\n", ft_memset(a, 90, 5));
+// 	printf("sizeof char =%lu", sizeof(int *));
+// }

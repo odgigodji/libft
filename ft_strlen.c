@@ -10,8 +10,9 @@
 /*                                                             k              */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+// #include <stdio.h>
+// #include <string.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {
@@ -23,9 +24,9 @@ size_t	ft_strlen(const char *s)
 	return ((size_t) len);
 }
 
-/*int		main()
-{
-	printf("myy  %lu\n", ft_strlen("iasd"));
-	printf("orig %lu\n", strlen("asdf"));
-	return (0);
-}*/	
+// int		main()
+// {
+// 	printf("myy  %lu\n", ft_strlen("iasd"));
+// 	printf("orig %lu\n", strlen("asdf"));
+// 	return (0);
+// }
