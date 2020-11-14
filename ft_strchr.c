@@ -6,7 +6,7 @@
 /*   By: namerei <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 23:26:38 by namerei           #+#    #+#             */
-/*   Updated: 2020/11/04 00:14:04 by namerei          ###   ########.fr       */
+/*   Updated: 2020/11/11 15:48:27 by namerei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ char *ft_strchr(const char *s, int c)
 			return ((char *)s);
 		s++;
 	}
-	if ((char)c == '\0')	
-		return ((char *)s);
+	// if ((char)c == '\0')	
+	// 	return ((char *)s);
 	return (0);
 	}
 

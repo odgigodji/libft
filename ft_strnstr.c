@@ -22,7 +22,6 @@ char		*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	i;
 	size_t	lit_len;
 	
-	
 	i = 0;
 	big = (char *)haystack;
 	lit_len = ft_strlen(needle);

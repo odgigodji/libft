@@ -10,30 +10,41 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include "ft_strlen.c"
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include "ft_strlen.c"
+#include "libft.h"
 
 char *ft_strjoin(char const *s1, char const *s2)
 {
 	size_t len;
-
+	size_t i;
+	
+	i =0;
+	if (!s1)
+		return 0;
 	len = ft_strlen(s1) + ft_strlen(s2);
 	char *res = (char *)malloc(len + 1);
-	while (s1 )
+	if (!res)
+		return (res);
+	while (s1[i])
 	{
-		*res = *s1;
-		res++;
-		s1++;
+		res[i] = s1[i];
+		i++;
 	}
-	*res = '\0';
+	while (*s2)
+	{
+		res[i] = *s2++;
+		i++;
+	}
+	res[i] = '\0';
 	return (res);
 }
 
-int		main(void)
-{
-	char *z = "asdfasdf";
-	char *a = "ffffffff";
-	char *x = ft_strjoin(z, a);
-	printf("%s\n",x);
-}
+// int		main(void)
+// {
+// 	char *z = "01234";
+// 	char *a = "56789";
+// 	char *x = ft_strjoin(z, a);
+// 	printf("%s\n",x);
+// }
