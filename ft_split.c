@@ -6,110 +6,103 @@
 /*   By: namerei <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/13 15:49:47 by namerei           #+#    #+#             */
-/*   Updated: 2020/11/13 15:51:07 by namerei          ###   ########.fr       */
+/*   Updated: 2020/11/14 15:52:19 by namerei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-// #include "libft.h"
-#include "ft_strtrim.c"
+//#include <stdio.h>
+#include "libft.h"
+// #include "ft_substr.c"
+// #include "ft_substr.c"
+// #include "ft_strtrim.c"
 
-// char **q(char *s, int n,int len, char *cc)
-// {
-//     if (s == 0)
-//         return (q)
-//     q(s, n , len, cc)
-//     ft_strtrim(s, n, len, cc)
-//     char *s = ft_substr(s, n , len)
-    
-// }
-
-size_t	ft_strlen_do_symb(const char *s, int c)
+int    ft_str_counter(char *s, int c)
 {
-	unsigned long  len;
-
-	len = 0;
-	while (s[len] != c)
-		len++;
-	return ((size_t) len);
-}
-
-int    ft_count_words_do_symb(char *s, int c)
-{
-    int in = 0;
     int count = 0;
     while(*s)
     {
-        if (*s == c)
-            ;
-        else if (*s != c)    
-            count++;
-        s++;        
-
-}
+        if ((*s != c && *(s + 1) == c) || (*s!= c && (*(s + 1) == '\0')))
+			count++;
+        s++;
+    }
     return(count);
 }
+
+char **ft_free_str(char **res, int i)
+{
+    i--;
+    while (res[i])
+    {
+        free(res[i]);
+        i--;
+    }
+    free(res);
+    return (res);
+}
+
 char **ft_split(char const *s, char c)
 {
-
     int i = 0;
-    int count =0;
-    char cc[1];
-    cc[0] = c;
-    // cc[0] = c;
-    // char *str = ft_strtrim(s,cc);
-    char **q = (char **)malloc(sizeof(char **) * 5);
+    int k = 0;
+    int symb_count = 0;
+    int str_count  = 0;
+    int str_len    = 0;
+    
+    if (s == NULL)
+        return (NULL);
+    str_len = ft_strlen(s);
+    str_count = ft_str_counter((char *)s, c);
+    char **q = (char **)malloc(sizeof(char *) * (str_count + 1));
+    // *(q + str_count) = NULL;
     if (q == NULL)
         return(0); //free function with q
-    q[0] = ft_strtrim(s,cc);
-    // while (q[0][i])
-    // {
-    //     if (q[0][i] != c)
-    //         i++;
-    //     else
-    //         count++;
-    //         i++;
-    // }
-
-    while(*s == c)
-        s++;
-    
-    printf("sss %s\n",s);
-    while(*s)
+    while(k < str_len && i < str_count)/*s[k] && */
     {
-        if (*s != c)
-            while(**q = malloc(sizeof(char *) * ft_strlen_do_symb(s, c))) {
-                **q = *s;
-            }
-        s++;
-        q++;
+        if (s[k] != c) // schitaet stroki i zapisivaet slovo
+        {
+                while (s[k] != c && s[k]) // schitaet dlinu slova simvoli
+                {
+                    symb_count++;
+                    k++;
+                }
+                q[i] = ft_substr(s , k - symb_count, symb_count);
+                if (q[i] == NULL)
+                    return(ft_free_str(q, i));
+                symb_count = 0;
+                i++;
+        }
+        k++;
     }
-    printf("count %d\n", count);
-
-    // char **x = NULL;
-
-    // i = 0;
-    // while(*s == c)
-    //     s++;
-    // while(*s)
-    // {
-    //     if(ft_strchr(s,c))
-    //     {
-    //         x[i] = ft_substr(s, 0, 5);
-    //     }
-    //     s++;
-    //     i++;
-    // }
+    q[i] = NULL;
+    // char **d = (char **)malloc(sizeof(char *) * (str_count + 1));
+    // *(d + str_count) = NULL;
+    // free(d);
     return (q);
 }
 
-int main(void)
-{
-    char **z = ft_split("   Darov kak dela  ? 123 ", ' ');
-    int i = 0;
 
-    printf("%s\n", z[0]);
-    // printf("%s\n", z[1]);
-    return (0);
-}
-  
+// int main(void)
+// {
+//     char *s = "lorem ipsum dolor sit amet, consectetur\
+//     adipiscing elit. Sed non risus. Suspendisse hello";
+//     char **z = ft_split(s, ' ');
+    
+//     int str_counter = ft_str_counter(s, ' ');
+//     printf("str_counter:%d\n", str_counter);
+
+//     // while (1) 
+//     //     ;
+    
+//     while (*z)
+//     {
+//         printf("%s", *z);
+//         z++;
+//     }
+//     // printf("%s\n", z[0]);
+//     // printf("%s\n", z[1]);
+//     // printf("%s\n", z[2]);
+//     // printf("%s\n", z[3]);
+//     // printf("%s\n", z[4]);
+    
+//     return (0);
+// }

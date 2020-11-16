@@ -10,13 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
 // #include <string.h>
-// #include "libft.h"
-
-#include "ft_strchr.c"
-#include "ft_strlen.c"
-#include "ft_substr.c"
+#include "libft.h"
 
 char *ft_strtrim(char const *s1, char const *set)
 {
@@ -33,6 +28,7 @@ char *ft_strtrim(char const *s1, char const *set)
     res = ft_substr(s1, 0, len + 1);
     return (res);
 }
+
 // int main(void)
 // {
 //     char *s1 = "../!asdfasd./!";
