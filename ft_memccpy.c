@@ -10,11 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
-// #include <string.h>
 #include "libft.h"
 
-void	*ft_memccpy(void *dst,  const void *src, int c, size_t n)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
 	size_t i;
 
@@ -28,14 +26,3 @@ void	*ft_memccpy(void *dst,  const void *src, int c, size_t n)
 	}
 	return (0);
 }
-
-// int		main(void)
-// {
-// 	char z[30] = "0123456789Zabcdefghjkl";
-// 	char x[30] = "0123456789Zabcdefghjkl";
-// 	memccpy(&z[2], &z[5], 90, 3*sizeof(char));
-// 	//ft_memccpy(&x[2], &x[5], 90, 3* sizeof(char));
-// 	printf("orig:%s\n", z);
-// 	printf("my:  %s\n", x);
-// 	return (0);
-// }

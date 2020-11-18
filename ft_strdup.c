@@ -6,19 +6,16 @@
 /*   By: namerei <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 00:07:46 by namerei           #+#    #+#             */
-/*   Updated: 2020/11/04 18:07:10 by namerei          ###   ########.fr       */
+/*   Updated: 2020/11/18 20:46:55 by namerei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
-// #include <stdlib.h>
-// #include "ft_strlen.c"
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+char		*ft_strdup(const char *s1)
 {
-	char *res;
-	size_t i;
+	char	*res;
+	size_t	i;
 
 	i = 0;
 	res = (char *)malloc(ft_strlen(s1) + 1);
@@ -32,11 +29,3 @@ char	*ft_strdup(const char *s1)
 	res[i] = '\0';
 	return (res);
 }
-
-// int 	main(void)
-// {
-// 	char *z = ft_strdup("gelllllloo");
-// 	printf("%s", z);
-// 	//printf("\217");
-// 	return (0);
-// }

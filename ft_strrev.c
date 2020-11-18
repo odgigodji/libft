@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnlen.c                                       :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: namerei <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/06 22:09:05 by namerei           #+#    #+#             */
-/*   Updated: 2020/11/06 22:33:01 by namerei          ###   ########.fr       */
+/*   Created: 2020/11/18 22:16:08 by namerei           #+#    #+#             */
+/*   Updated: 2020/11/18 22:20:17 by namerei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <string.h>
-// #include <stdio.h>
 #include "libft.h"
 
-size_t ft_strnlen(const char *s, size_t maxlen)
+char		*ft_strrev(char *s)
 {
-	size_t len;
+	int		start;
+	int		end;
+	char	tmp;
+	int		len;
 
-	len = 0;
-	while (len < maxlen) 
+	start = 0;
+	end = ft_strlen(s) - 1;
+	tmp = 0;
+	len = end;
+	while (start != (len / 2) + 1)
 	{
-		if (!s[len])
-			break;
-		len++;
+		tmp = s[start];
+		s[start] = s[end];
+		s[end] = tmp;
+		start++;
+		end--;
 	}
-	return (len);
+	return (s);
 }
-
-// int	main(void)
-// {
-// 	char z[] = "01234567890";
-// 	printf("my:%zu\n", ft_strnlen(z,9));
-// 	printf("orig %zu\n", strnlen(z,9));
-// }

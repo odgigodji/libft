@@ -10,15 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
-// #include <string.h>
 #include "libft.h"
 
-void	*ft_memcpy(void *dst,  const void *src, size_t n)
+void				*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	unsigned char *d;
-	unsigned char *s;
-	
+	unsigned char	*d;
+	unsigned char	*s;
+
 	if (!dst && !src)
 		return (0);
 	d = (unsigned char*)dst;
@@ -27,14 +25,3 @@ void	*ft_memcpy(void *dst,  const void *src, size_t n)
 		*((unsigned char*)d++) = *((unsigned char *)s++);
 	return (dst);
 }
-
-// int		main(void)
-// {
-// 	char a[20] = "";
-// 	char dest[20] = "";
-// 	char aa[20] = "";
-// 	char ddest[20] = "";
-// 	printf("cpy my:   %s\n", ft_memcpy(a + 1, a + 3, 6));
-// 	printf("cpy orig: %s\n", memcpy(aa + 1, aa + 3, 6));
-// 	return (0);
-// }
