@@ -6,7 +6,7 @@
 /*   By: namerei <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/13 15:49:47 by namerei           #+#    #+#             */
-/*   Updated: 2020/11/18 22:02:37 by namerei          ###   ########.fr       */
+/*   Updated: 2020/11/19 21:34:47 by namerei          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,14 @@ static int	ft_str_counter(char *s, int c)
 
 static char	**ft_free_str(char **res, int i)
 {
-	i--;
-	while (res[i])
+	if (!i)
 	{
-		free(res[i]);
 		i--;
+		while (i >= 0)
+		{
+			free(res[i]);
+			i--;
+		}
 	}
 	free(res);
 	return (res);
