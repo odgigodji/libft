@@ -6,7 +6,7 @@
 #    By: namerei <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/19 20:47:33 by namerei           #+#    #+#              #
-#    Updated: 2020/11/22 15:43:25 by namerei          ###   ########.fr        #
+#    Updated: 2020/11/23 14:46:02 by namerei          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ $(NAME):	${OBJS}
 all:		${NAME}
 
 clean:	
-			${RM} ${OBJS} ${OBJS_BONUS}
+			${RM} ${OBJS}
 			@echo "$(F_GREEN)Cleaned! $(F_NONE)"
 
 fclean:		clean
