@@ -18,11 +18,4 @@ void ft_lstdelone(t_list *lst, void (*del)(void *))
         return;
     del(lst->content);
     free(lst);
-//    lst->content = NULL;
-//    printf("%p\n", lst->next);
-//    free(lst);
-//    free(lst->next);
-//    lst->next = NULL;
-//    printf("%p\n", lst->next);
-//    printf("%s\n", lst->next->content);
 }
