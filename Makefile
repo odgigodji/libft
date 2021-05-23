@@ -44,6 +44,7 @@ $(NAME):	${OBJS}
 
 bonus:		${BNSOBJS}
 			ar -rc ${NAME} ${BNSOBJS}
+			@echo "$(F_GREEN)With bonus done! $(F_NONE)"
 
 all:		${NAME}
 
