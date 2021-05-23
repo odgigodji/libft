@@ -16,16 +16,19 @@ ft_isalnum.c ft_isascii.c ft_isprint.c ft_toupper.c ft_tolower.c ft_strnstr.c ft
 ft_substr.c ft_strjoin.c ft_strtrim.c ft_itoa.c ft_split.c ft_strmapi.c ft_putchar_fd.c ft_putstr_fd.c 			\
 ft_putendl_fd.c ft_putnbr_fd.c ft_isspace.c ft_strrev.c
 
-#BNS		= 	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c				\
+BNS		= 	ft_lstnew.c
+#ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c				\
 #			ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
 F_NONE		= \033[37m
 F_ORANGE	= \033[38m
 F_GREEN		= \033[32m
 
+NAME		= libft.a
+
 OBJS		= ${SRCS:.c=.o}
 
-NAME		= libft.a
+BNSOBJS		= ${BNS:.c=.o}
 
 CC			= gcc
 
@@ -38,17 +41,19 @@ CFLAGS		= -Wall -Wextra -Werror
 
 $(NAME):	${OBJS}
 			ar -rc ${NAME} ${OBJS}
-			ranlib ${NAME}
 			@echo "$(F_GREEN)Done! $(F_NONE)"
+
+bonus:		${BNSOBJS}
+			ar -rc ${NAME} ${BNSOBJS}
 
 all:		${NAME}
 
 clean:	
-			${RM} ${OBJS}
+			${RM} ${OBJS} $(BNSOBJS)
 			@echo "$(F_GREEN)Cleaned! $(F_NONE)"
 
 fclean:		clean
-			${RM} ${NAME} 
+			${RM} ${NAME} $(BNSOBJS)
 
 re:			fclean all
 
