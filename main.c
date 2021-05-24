@@ -32,11 +32,17 @@ int main()
     ft_lstadd_back(&lst, src2);
     ft_lstadd_back(&lst, src3);
 
+//    ft_lstdelone(lst->next->next, del); // delete content from one list
+    ft_lstclear(&lst, del);
+
     int j = 0;
     printf("\n\n----------------------------start---------------------------------\n");
-    printf("lst size is %d\n", ft_lstsize(lst));
+//    printf("lst size is %d\n", ft_lstsize(lst));
+//printf("sdf");
     while(1) {
-        printf("%d elem is contain |%s|\n", j, (char *) lst->content);
+        if (lst->content)
+            printf("content is |%s|", (char *) lst->content);
+        printf("%d elem is addres is [%p]\n", j, lst->content);
         if (!lst->next)
             break;
         lst = lst->next;

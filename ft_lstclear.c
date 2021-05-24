@@ -11,13 +11,24 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 void ft_lstclear(t_list **lst, void (*del)(void*))
 {
-    int i;
+    t_list *tmp;
+    t_list *list;
 
-    i = 0;
-    if(!lst)
+    list = *lst; //list is lst now we can work with
+    if(!list)
         return ;
-
+    int i = 0;
+    while(i < 4)
+    {
+        printf("%s\n", (char *) list->content);
+        tmp = list->next;
+        ft_lstdelone(list, del);
+        list = tmp;
+        i++;
+    }
+    ft_lstdelone(tmp, del);
 }

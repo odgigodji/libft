@@ -21,7 +21,7 @@ t_list *ft_lstnew(void *content) // create element of list
         lst->content = NULL;
         return (lst);
     }
-    lst->content = ft_strdup(content);
+    lst->content = content;
     lst->next = NULL;
     return (lst);
 }
